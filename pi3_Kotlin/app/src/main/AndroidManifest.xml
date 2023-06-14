@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.telephony" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/name_app"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.sorriso24h"
+        tools:targetApi="31">
+        <activity
+            android:name=".views.AddressEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.ServiceHistoricActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.ServiceConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.PhotoViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.Register1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".views.AccountDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.PhotoRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.EmergenciesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.EmergencyDetailActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_arrow_back" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/purple_500" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_MAPS_API_KEY}" />
+
+        <activity
+            android:name=".views.SuccessfulRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.TelaLogin"
+            android:exported="false" />
+
+        <service
+            android:name=".views.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
